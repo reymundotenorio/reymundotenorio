@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "username": "reymundotenorio",
+  "since": 2015,
+  "collectedAt": "2026-11-06T04:56:40.860Z",
+  "updatedDate": "2026-11-05",
+  "period": {
+    "from": "2025-11-06T04:56:40.860Z",
+    "to": "2026-11-06T04:56:40.860Z"
+  },
+  "lifetime": {
+    "contributions": 9100,
+    "privateContributions": 7983,
+    "authoredPullRequests": 536,
+    "mergedPullRequests": 515,
+    "reviewedPullRequests": 885,
+    "activeYears": 12
+  },
+  "activity": {
+    "contributions": 2481,
+    "privateContributions": 2411,
+    "activeDays": 238
+  },
+  "years": [
+    {
+      "year": 2015,
+      "contributions": 2,
+      "privateContributions": 0
+    },
+    {
+      "year": 2016,
+      "contributions": 52,
+      "privateContributions": 8
+    },
+    {
+      "year": 2017,
+      "contributions": 15,
+      "privateContributions": 1
+    },
+    {
+      "year": 2018,
+      "contributions": 289,
+      "privateContributions": 15
+    },
+    {
+      "year": 2019,
+      "contributions": 604,
+      "privateContributions": 167
+    },
+    {
+      "year": 2020,
+      "contributions": 317,
+      "privateContributions": 195
+    },
+    {
+      "year": 2021,
+      "contributions": 91,
+      "privateContributions": 41
+    },
+    {
+      "year": 2022,
+      "contributions": 204,
+      "privateContributions": 201
+    },
+    {
+      "year": 2023,
+      "contributions": 1360,
+      "privateContributions": 1359
+    },
+    {
+      "year": 2024,
+      "contributions": 2643,
+      "privateContributions": 2623
+    },
+    {
+      "year": 2025,
+      "contributions": 1216,
+      "privateContributions": 1136
+    },
+    {
+      "year": 2026,
+      "contributions": 2307,
+      "privateContributions": 2237
+    }
+  ],
+  "languages": {
+    "repositories": 146,
+    "totalBytes": 449290815,
+    "scope": "owned-and-recent-contributed-nonfork",
+    "items": [
+      {
+        "name": "PHP",
+        "bytes": 234262618,
+        "repositories": 31,
+        "share": 52.2
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 72588646,
+        "repositories": 84,
+        "share": 16.2
+      },
+      {
+        "name": "CSS",
+        "bytes": 42344875,
+        "repositories": 91,
+        "share": 9.4
+      },
+      {
+        "name": "HTML",
+        "bytes": 34380328,
+        "repositories": 72,
+        "share": 7.7
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 32740472,
+        "repositories": 21,
+        "share": 7.3
+      },
+      {
+        "name": "Python",
+        "bytes": 20685854,
+        "repositories": 5,
+        "share": 4.6
+      },
+      {
+        "name": "Java",
+        "bytes": 7694301,
+        "repositories": 26,
+        "share": 1.7
+      },
+      {
+        "name": "SCSS",
+        "bytes": 2073234,
+        "repositories": 16,
+        "share": 0.5
+      },
+      {
+        "name": "Ruby",
+        "bytes": 566470,
+        "repositories": 9,
+        "share": 0.1
+      },
+      {
+        "name": "Less",
+        "bytes": 551217,
+        "repositories": 1,
+        "share": 0.1
+      },
+      {
+        "name": "C#",
+        "bytes": 406616,
+        "repositories": 4,
+        "share": 0.1
+      },
+      {
+        "name": "Shell",
+        "bytes": 186511,
+        "repositories": 11,
+        "share": 0.1
+      },
+      {
+        "name": "Hack",
+        "bytes": 147023,
+        "repositories": 6,
+        "share": 0
+      },
+      {
+        "name": "Go",
+        "bytes": 136013,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "PLpgSQL",
+        "bytes": 118691,
+        "repositories": 5,
+        "share": 0
+      },
+      {
+        "name": "Vue",
+        "bytes": 69580,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "Smarty",
+        "bytes": 63923,
+        "repositories": 2,
+        "share": 0
+      },
+      {
+        "name": "PLSQL",
+        "bytes": 61971,
+        "repositories": 2,
+        "share": 0
+      },
+      {
+        "name": "HCL",
+        "bytes": 57942,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "TSQL",
+        "bytes": 53119,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "Astro",
+        "bytes": 36251,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "XSLT",
+        "bytes": 26772,
+        "repositories": 2,
+        "share": 0
+      },
+      {
+        "name": "Modelica",
+        "bytes": 20676,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "CoffeeScript",
+        "bytes": 6270,
+        "repositories": 6,
+        "share": 0
+      },
+      {
+        "name": "VCL",
+        "bytes": 3906,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "SQLPL",
+        "bytes": 3773,
+        "repositories": 1,
+        "share": 0
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 3550,
+        "repositories": 3,
+        "share": 0
+      },
+      {
+        "name": "ASP",
+        "bytes": 213,
+        "repositories": 2,
+        "share": 0
+      }
+    ]
+  }
+}

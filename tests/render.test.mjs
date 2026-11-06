@@ -36,7 +36,8 @@ test('role and GitHub tenure stay centered in every header layout', () => {
 test('README is native GitHub-compatible content with real links and both responsive themes', () => {
     const html = readme(data);
     assert.match(html, /<picture>/);
-    assert.match(html, /prefers-color-scheme: dark/);
+    assert(html.includes('#gh-dark-mode-only') && html.includes('#gh-light-mode-only'), 'Theme context belongs on links so GitHub cannot overwrite responsive media conditions');
+    assert.doesNotMatch(html, /media="[^"]*prefers-color-scheme/);
     assert.match(html, /max-width: 480px/);
     assert.match(html, /max-width: 800px/);
     assert.match(html, /https:\/\/reymundotenorio.github.io\//);

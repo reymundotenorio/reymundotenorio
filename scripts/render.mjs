@@ -102,8 +102,9 @@ export function languageSvg(data, theme = 'dark', size = 'desktop') {
 }
 
 function picture(kind, alt) {
-  const source = (media, suffix) => `  <source media="${media}" srcset="./assets/${kind}-en-${suffix}.svg">`;
-  return `<p align="center"><picture>\n${source('(prefers-color-scheme: dark) and (max-width: 480px)', 'dark-mobile')}\n${source('(prefers-color-scheme: dark) and (max-width: 800px)', 'dark-tablet')}\n${source('(prefers-color-scheme: dark)', 'dark')}\n${source('(max-width: 480px)', 'light-mobile')}\n${source('(max-width: 800px)', 'light-tablet')}\n  <img src="./assets/${kind}-en-light.svg" alt="${escape(alt)}">\n</picture></p>`;
+  // GitHub rewrites theme media conditions; keep responsive sizing separate from theme context.
+  const variant = theme => `<a href="./assets/${kind}-en-${theme}.svg#gh-${theme}-mode-only"><picture>\n  <source media="(max-width: 480px)" srcset="./assets/${kind}-en-${theme}-mobile.svg">\n  <source media="(max-width: 800px)" srcset="./assets/${kind}-en-${theme}-tablet.svg">\n  <img src="./assets/${kind}-en-${theme}.svg" alt="${escape(alt)}">\n</picture></a>`;
+  return `<p align="center">${variant('dark')}\n${variant('light')}</p>`;
 }
 export function readme(data) {
   const update = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(`${data.updatedDate}T12:00:00Z`));

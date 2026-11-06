@@ -69,9 +69,9 @@ export function assertCoverage(before, after) {
 
 export async function validatePublication(root = fileURLToPath(new URL('../', import.meta.url))) {
   const data = validateSnapshot(JSON.parse(await readFile(resolve(root, 'metrics.json'), 'utf8')));
-  const expected = ['header', 'activity', 'languages'].flatMap(kind => ['en', 'es'].flatMap(lang => ['dark', 'light'].flatMap(theme => ['', '-mobile'].map(size => `${kind}-${lang}-${theme}${size}.svg`))));
+  const expected = ['header', 'activity', 'languages'].flatMap(kind => ['dark', 'light'].flatMap(theme => ['', '-tablet', '-mobile'].map(size => `${kind}-en-${theme}${size}.svg`)));
   assert.deepEqual((await readdir(resolve(root, 'assets'))).sort(), expected.sort(), 'Unexpected publication assets');
-  for (const file of [...expected.map(name => `assets/${name}`), 'README.md', 'README.es.md']) {
+  for (const file of [...expected.map(name => `assets/${name}`), 'README.md']) {
     const source = await readFile(resolve(root, file), 'utf8');
     assert.doesNotMatch(source, /github_pat_|gh[pousr]_[a-zA-Z0-9]+|R_kg[A-Za-z0-9_-]+|nameWithOwner|node_id|mailto:|tel:|\/Users\/|<script|foreignObject|onload=/i, 'Unsafe publication content');
     if (file.endsWith('.svg')) assert.doesNotMatch(source, /(?:href|src)=["']https?:\/\//i);

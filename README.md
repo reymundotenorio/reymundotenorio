@@ -1,11 +1,11 @@
-<p align="right"><a href="./README.es.md">Español</a></p>
-
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 900px)" srcset="./assets/header-en-dark-mobile.svg">
+<p align="center"><picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 480px)" srcset="./assets/header-en-dark-mobile.svg">
+  <source media="(prefers-color-scheme: dark) and (max-width: 800px)" srcset="./assets/header-en-dark-tablet.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/header-en-dark.svg">
-  <source media="(max-width: 900px)" srcset="./assets/header-en-light-mobile.svg">
-  <img src="./assets/header-en-light.svg" width="900" alt="Reymundo Tenorio / Software Engineer">
-</picture>
+  <source media="(max-width: 480px)" srcset="./assets/header-en-light-mobile.svg">
+  <source media="(max-width: 800px)" srcset="./assets/header-en-light-tablet.svg">
+  <img src="./assets/header-en-light.svg" alt="Reymundo Tenorio / Software Engineer">
+</picture></p>
 
 <p>I build web and mobile products, integrate AI into real workflows, and automate the work around them.</p>
 
@@ -13,19 +13,23 @@
 
 <p><code>TypeScript</code> &middot; <code>React</code> &middot; <code>React Native</code> &middot; <code>Node.js</code> &middot; <code>PHP</code> &middot; <code>WordPress</code> &middot; <code>Go</code></p>
 
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 900px)" srcset="./assets/activity-en-dark-mobile.svg">
+<p align="center"><picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 480px)" srcset="./assets/activity-en-dark-mobile.svg">
+  <source media="(prefers-color-scheme: dark) and (max-width: 800px)" srcset="./assets/activity-en-dark-tablet.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-en-dark.svg">
-  <source media="(max-width: 900px)" srcset="./assets/activity-en-light-mobile.svg">
-  <img src="./assets/activity-en-light.svg" width="900" alt="GitHub activity: 9,100 contributions, 536 PRs authored, 885 PRs reviewed, 515 PRs merged. Personal + organization activity.">
-</picture>
+  <source media="(max-width: 480px)" srcset="./assets/activity-en-light-mobile.svg">
+  <source media="(max-width: 800px)" srcset="./assets/activity-en-light-tablet.svg">
+  <img src="./assets/activity-en-light.svg" alt="GitHub activity: 9,100 contributions, 536 PRs authored, 885 PRs reviewed, 515 PRs merged. Personal and organization activity.">
+</picture></p>
 
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 900px)" srcset="./assets/languages-en-dark-mobile.svg">
+<p align="center"><picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 480px)" srcset="./assets/languages-en-dark-mobile.svg">
+  <source media="(prefers-color-scheme: dark) and (max-width: 800px)" srcset="./assets/languages-en-dark-tablet.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-en-dark.svg">
-  <source media="(max-width: 900px)" srcset="./assets/languages-en-light-mobile.svg">
-  <img src="./assets/languages-en-light.svg" width="900" alt="Repository footprint: 146 repos analyzed. PHP 52.2%, JavaScript 16.2%, CSS 9.4%, HTML 7.7%, TypeScript 7.3%. Code bytes, not a skill rating.">
-</picture>
+  <source media="(max-width: 480px)" srcset="./assets/languages-en-light-mobile.svg">
+  <source media="(max-width: 800px)" srcset="./assets/languages-en-light-tablet.svg">
+  <img src="./assets/languages-en-light.svg" alt="Repository footprint: 146 repos analyzed. PHP 52.2%, JavaScript 16.2%, CSS 9.4%, HTML 7.7%, TypeScript 7.3%. Code bytes, not a skill rating.">
+</picture></p>
 
 <details>
 <summary>About these numbers</summary>

@@ -8,12 +8,9 @@ test('generated public assets pass the aggregate schema and credential-free vali
   assert.equal(data.username, 'reymundotenorio');
 });
 
-test('committed readmes match the generator output for each language', async () => {
+test('the English README matches the generator output', async () => {
   const { readme } = await import('../scripts/render.mjs');
   const data = await validatePublication();
-  for (const lang of ['en', 'es']) {
-    const filename = lang === 'en' ? 'README.md' : 'README.es.md';
-    const content = readFileSync(new URL(`../${filename}`, import.meta.url), 'utf8');
-    assert.equal(content, readme(data, lang));
-  }
+  const content = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+  assert.equal(content, readme(data));
 });

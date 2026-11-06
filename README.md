@@ -9,11 +9,11 @@
   <img src="./assets/header-en-light.svg" alt="Reymundo Tenorio / Software Engineer">
 </picture></a></p>
 
-<p>I build web and mobile products, integrate AI into real workflows, and automate the work around them.</p>
+<p align="center">I build web and mobile products, integrate AI into real workflows, and automate the work around them.</p>
 
-<p><a href="https://reymundotenorio.github.io/en/"><strong>Explore my portfolio ↗</strong></a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/reymundotenorio/">LinkedIn</a></p>
+<p align="center"><a href="https://reymundotenorio.github.io/en/"><strong>Explore my portfolio ↗</strong></a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/reymundotenorio/">LinkedIn</a></p>
 
-<p><code>TypeScript</code> &middot; <code>React</code> &middot; <code>React Native</code> &middot; <code>Node.js</code> &middot; <code>PHP</code> &middot; <code>WordPress</code> &middot; <code>Go</code></p>
+<p align="center"><code>TypeScript</code> &middot; <code>React</code> &middot; <code>React Native</code> &middot; <code>Node.js</code> &middot; <code>PHP</code> &middot; <code>WordPress</code> &middot; <code>Go</code></p>
 
 <p align="center"><a href="./assets/activity-en-dark.svg#gh-dark-mode-only"><picture>
   <source media="(max-width: 480px)" srcset="./assets/activity-en-dark-mobile.svg">

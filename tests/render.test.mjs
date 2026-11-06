@@ -35,6 +35,9 @@ test('role and GitHub tenure stay centered in every header layout', () => {
 });
 test('README is native GitHub-compatible content with real links and both responsive themes', () => {
     const html = readme(data);
+    for (const prefix of ['I build web', '<a href="https://reymundotenorio.github.io/en/"', '<code>TypeScript']) {
+      assert(html.includes(`<p align="center">${prefix}`), 'Description, links and technology stack must use centered native paragraphs');
+    }
     assert.match(html, /<picture>/);
     assert(html.includes('#gh-dark-mode-only') && html.includes('#gh-light-mode-only'), 'Theme context belongs on links so GitHub cannot overwrite responsive media conditions');
     assert.doesNotMatch(html, /media="[^"]*prefers-color-scheme/);

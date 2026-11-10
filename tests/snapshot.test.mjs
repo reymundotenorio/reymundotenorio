@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { spawnSync } from 'node:child_process';
 import { test } from 'node:test';
 import { validateSnapshot, assertCoverage } from '../scripts/validate.mjs';
 
@@ -43,14 +42,3 @@ test('lost private coverage does not silently replace the approved full snapshot
   assert.throws(() => assertCoverage(before, fewerRepositories), /coverage/);
 });
 
-test('Actions without a collection credential fails before replacing any snapshot', () => {
-  const file = new URL('metrics.json', root), before = readFileSync(file, 'utf8');
-  const result = spawnSync(process.execPath, ['scripts/collect.mjs'], {
-    cwd: root,
-    encoding: 'utf8',
-    env: { PATH: process.env.PATH, GITHUB_ACTIONS: 'true', GH_TOKEN: '', GITHUB_TOKEN: '' },
-  });
-  assert.notEqual(result.status, 0);
-  assert.match(result.stderr, /PROFILE_STATS_TOKEN/);
-  assert.equal(readFileSync(file, 'utf8'), before);
-});

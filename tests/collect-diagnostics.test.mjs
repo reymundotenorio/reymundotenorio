@@ -35,6 +35,8 @@ if (query.includes('contributionYears')) {
   data = { viewer: { contributionsCollection: { restrictedContributionsCount: before.activity.privateContributions, contributionCalendar: { totalContributions: before.activity.contributions, weeks: [{ contributionDays: [{ date: before.updatedDate, contributionCount: before.activity.contributions }] }] } } } };
 } else if (query.includes('authored:search')) {
   data = { authored: { issueCount: before.lifetime.authoredPullRequests - (mode === 'coverage-history' ? 1 : 0) }, merged: { issueCount: before.lifetime.mergedPullRequests }, reviewed: { issueCount: before.lifetime.reviewedPullRequests } };
+} else if (mode === 'coverage-unavailable' && !query.includes('ownerAffiliations')) {
+  data = { viewer: { result: { totalCount: 1, nodes: [null], pageInfo: { hasNextPage: false, endCursor: null } } } };
 } else {
   const count = query.includes('ownerAffiliations') ? Math.floor(before.languages.repositories * (mode === 'coverage-repositories' ? 0.8 : 1)) : 0;
   data = { viewer: { result: { totalCount: count, nodes: Array.from({ length: count }, (_, id) => ({ id: 'synthetic-' + id, isFork: false, languages: { totalCount: 1, edges: [{ size: 1, node: { name: 'TypeScript' } }] } })), pageInfo: { hasNextPage: false, endCursor: null } } } };
@@ -77,6 +79,10 @@ for (const [mode, code] of [
     assert.match(runCollector(mode), new RegExp(`stage=account code=${code}\\]`));
   });
 }
+
+test('unavailable contributed repository entries have a distinct safe diagnostic', () => {
+  assert.match(runCollector('coverage-unavailable'), /stage=contributed-repositories code=UNAVAILABLE_REPOSITORY_ENTRIES\]/);
+});
 
 for (const [mode, code] of [
   ['coverage-history', 'HISTORICAL_COVERAGE_DECREASED'],

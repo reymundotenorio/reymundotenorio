@@ -16,6 +16,7 @@ const failureCodes = new Map([
   ['Repository coverage changed during collection; retry before rendering.', 'REPOSITORY_COVERAGE_CHANGED'],
   ['Invalid pagination; no partial result is rendered.', 'INVALID_PAGINATION'],
   ['Repository pages are incomplete.', 'INCOMPLETE_REPOSITORY_PAGES'],
+  ['Repository pages contain unavailable entries.', 'UNAVAILABLE_REPOSITORY_ENTRIES'],
 ]);
 function githubFailure(response) {
   const types = Array.isArray(response?.errors) ? response.errors.map(error => error?.type ?? error?.extensions?.code) : [];
@@ -38,19 +39,21 @@ function graphql(query) {
 }
 const languageFields = 'id isFork languages(first:100,orderBy:{field:SIZE,direction:DESC}) { totalCount edges { size node { name } } }';
 function readRepositories(field, args) {
-  let after = null, expected = null; const nodes = [], cursors = new Set();
+  let after = null, expected = null, unavailable = false; const nodes = [], cursors = new Set();
   do {
     const suffix = after ? `,after:${JSON.stringify(after)}` : '';
     const connection = graphql(`query { viewer { result:${field}(first:100,${args}${suffix}) { totalCount nodes { ${languageFields} } pageInfo { hasNextPage endCursor } } } }`).viewer.result;
     if (expected === null) expected = connection.totalCount;
     if (expected !== connection.totalCount) throw new Error('Repository coverage changed during collection; retry before rendering.');
-    nodes.push(...connection.nodes.filter(Boolean));
+    const visible = connection.nodes.filter(Boolean);
+    if (visible.length !== connection.nodes.length) unavailable = true;
+    nodes.push(...visible);
     if (!connection.pageInfo.hasNextPage) break;
     after = connection.pageInfo.endCursor;
     if (!after || cursors.has(after)) throw new Error('Invalid pagination; no partial result is rendered.');
     cursors.add(after);
   } while (true);
-  if (nodes.length !== expected) throw new Error('Repository pages are incomplete.');
+  if (nodes.length !== expected) throw new Error(unavailable ? 'Repository pages contain unavailable entries.' : 'Repository pages are incomplete.');
   return nodes;
 }
 
